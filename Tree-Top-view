@@ -1,0 +1,29 @@
+/*
+struct node
+{
+    int data;
+    node* left;
+    node* right;
+};
+
+*/
+
+void top_view_pre(node * root)
+{
+    if(root == NULL) return;
+    cout<<root->data<<" ";
+    top_view_pre(root->right);
+}
+
+void top_view_post(node * root)
+{
+    if(root == NULL) return;   
+    top_view_post(root->left);
+    cout<<root->data<<" ";
+}
+
+void top_view(node * root)
+{
+    top_view_post(root);
+    top_view_pre(root->right);
+}
